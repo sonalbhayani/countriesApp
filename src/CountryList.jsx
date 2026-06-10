@@ -8,18 +8,14 @@ function CountryList() {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {   
-        try{
-            axios.get('https://xcountries-backend.labs.crio.do/all')
+         axios.get('https://xcountries-backend.labs.crio.do/all')
             .then(response => {
                 setCountries(response.data);
             })
             .catch(error => {
-                console.error('Error fetching countries:', error);
+                console.error('Error fetching data:', error);
             });
-        }
-        catch(error){
-            console.error('Error fetching countries:', error);
-        }
+       
         
     }, []);
 
